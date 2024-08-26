@@ -2,7 +2,6 @@ const mysql = require('mysql2');
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Create a connection to the database
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -10,7 +9,6 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
-// Connect to the database
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to the MySQL database:', err.message);
@@ -18,7 +16,6 @@ connection.connect((err) => {
   }
   console.log('Connected to the MySQL database.');
 
-  // Create the recipes table if it doesn't exist
   const createTableQuery = `
     CREATE TABLE IF NOT EXISTS recipes (
       id INT AUTO_INCREMENT PRIMARY KEY,

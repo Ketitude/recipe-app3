@@ -1,4 +1,4 @@
-const db = require('../database/database');
+const db = require('../../db/database');
 
 // Dodavanje novog recepta
 const addRecipe = (recipe, callback) => {
